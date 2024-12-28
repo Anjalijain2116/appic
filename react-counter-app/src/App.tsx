@@ -7,7 +7,10 @@ function App() {
     <div className="App">
       <div>
         <h1>Welcome to My Counter App</h1>
-        <Counter />
+        {/* Array.map((, index) => <Counter id={index}/>) */}
+        <Counter index='1' />
+        <Counter index='2' />
+        <Counter index='3' />
       </div>
     </div>
   );
