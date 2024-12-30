@@ -1,0 +1,26 @@
+<div>
+  <h2>Reactive Form</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" appAttribute="lightBlue">
+      <div *appCheck="form.get('name')?.errors?.['required']">Name is required</div>
+      <div *ngIf="form.get('name')?.errors?.['customError']">{{ form.get('name')?.errors?.['customError'] }}</div>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email">
+      <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+      <div *ngIf="form.get('email')?.errors?.['email']">Invalid email</div>
+    </div>
+    <div formArrayName="items">
+      <div *ngFor="let item of items.controls; let i = index">
+        <label for="item-{{i}}">Item {{i + 1}}:</label>
+        <input [id]="'item-' + i" [formControlName]="i">
+        <button type="button" (click)="removeItem(i)">Remove</button>
+      </div>
+    </div>
+    <button type="button" (click)="addItem()">{{'Add' | custom: 'item'}}</button>
+    <button type="submit">{{'Submit' | custom: 'form'}}</button>
+  </form>
+</div>

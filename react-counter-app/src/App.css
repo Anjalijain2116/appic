@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -35,4 +35,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.welcome {
+  background-color: rgb(72, 68, 68);
+  color: black;
+  padding-block: 10px;
+  text-align: center;
+}
+.btn{
+   margin-right: 10px;
+   padding: 5px;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+}
+.CountersPage{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding-inline: 100px;
+  
 }
